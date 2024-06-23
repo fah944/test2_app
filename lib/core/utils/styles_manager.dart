@@ -2,10 +2,10 @@
 import 'package:flutter/material.dart';
 import 'package:ptc_test2_app/core/utils/values_manager.dart';
 
-class StyleManage {
+class StyleManager {
  
 
-
+//30
 // Heading 01
   static TextStyle h1Bold({
         Color? color,
@@ -52,7 +52,7 @@ class StyleManage {
   }
 
 
-
+//26
 // Heading 02
   static TextStyle h2Bold({
         Color? color,
@@ -98,7 +98,7 @@ class StyleManage {
     );
   }
 
-  
+//20
 // Heading 03
   static TextStyle h3Bold({
         Color? color,
@@ -144,7 +144,7 @@ class StyleManage {
     );
   }
 
- 
+ //18
 // Heading 04
   static TextStyle h4Bold({
         Color? color,
@@ -193,6 +193,7 @@ class StyleManage {
 
 
 /////////////////////////////////
+///16
   // Body 01
      static TextStyle body1SemiBold({
         Color? color,
@@ -227,7 +228,7 @@ class StyleManage {
     );
   }
   
-
+///14
   // Body 02
  static TextStyle body2SemiBold({
         Color? color,
@@ -266,7 +267,7 @@ class StyleManage {
 ////////////////////////////////
 
 
-
+//12
 // Label
 static TextStyle labelMedium({
         Color? color,
