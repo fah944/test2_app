@@ -7,7 +7,9 @@ class AssetsManager{
 
 
 /// Images
-  static const waveImage = '$imagesPath/wave.svg';
+   static const onboard1 = '$imagesPath/onboard1.png';
+   static const onboard2 = '$imagesPath/onboard2.png';
+    static const onboard3 = '$imagesPath/onboard3.png';
 
 
 
