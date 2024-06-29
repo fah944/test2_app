@@ -51,12 +51,12 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                       const Spacer(flex: 2,),
                       Text(
                         slide['title']!,
-                        style:StyleManager.h1Bold(color: ColorManager.c1) 
+                        style:StyleManager.h1Bold(color: c1) 
                       ),
                       const SizedBox(height: AppSize.s20),
                       Text(
                         slide['subtitle']!,
-                        style:StyleManager.h4Medium(color: ColorManager.c4),
+                        style:StyleManager.h4Medium(color: c4),
                       ),
                       const SizedBox(height: AppSize.s40),
                       SizedBox(
@@ -74,7 +74,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                                  height: AppSize.s4,
                                  decoration:
                                   BoxDecoration(
-                                 color: curIndex == index ? ColorManager.c1 :ColorManager.c4,
+                                 color: curIndex == index ? c1 :c4,
                                  borderRadius: BorderRadius.circular(AppSize.s10)
                                        ),
                              ),
