@@ -1,16 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:ptc_test2_app/core/utils/styles_manager.dart';
 import 'package:ptc_test2_app/core/utils/values_manager.dart';
-import 'package:ptc_test2_app/widgets/box_style_widget.dart';
-
 import '../../core/const/const.dart';
-import '../../core/utils/assets_manager.dart';
-import '../../core/utils/color_manager.dart';
-import '../../widgets/image_widget.dart';
-import 'widget/offer_item_widget.dart';
+import '../grocery/widget/offer_item_widget.dart';
 
-class MyHomeScreen extends StatelessWidget {
-  const MyHomeScreen({super.key});
+class MyScreen extends StatelessWidget {
+  const MyScreen({super.key});
   @override
   Widget build(BuildContext context) {
 
