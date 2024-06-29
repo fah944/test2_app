@@ -29,7 +29,10 @@ class StringManager
   static const tabItem20 = 'Halal Meats';
   static const tabItem21 = 'Organics & Fresh';
   static const q2 ='\$90';
- 
+
+
+  static const orange = 'Orange';
+   static const thinChoiseTopOrange = 'Thin Choise Top Orange';
 
 
   

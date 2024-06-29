@@ -206,7 +206,24 @@ static  List<Widget> inactiveIcons = [
      DealModel(img: AssetsManager.onboard1,val: '\$325',text:'Clown Tang.H03'),
 
   ];
+////sliver appbar
 
+
+static List<Map<String, String>> slidimg = [
+    {  
+      'id':'1',
+      'img':AssetsManager.onboard1,
+    },
+    
+    {
+      'id':'2',
+      'img':AssetsManager.onboard2,      
+    },
+    {
+      'id':'3',
+      'img':AssetsManager.onboard3,
+    },
+  ];
 
 }
 

@@ -8,6 +8,7 @@ import '../../../core/utils/values_manager.dart';
 import '../../../widgets/deals_item_widget.dart';
 import '../../grocery/widget/grid_view_widget.dart';
 import '../widget/list_of_tab_widget.dart';
+import 'product_deatels_screen.dart';
 
 
 class FishesScreen extends StatelessWidget {
@@ -35,7 +36,9 @@ class FishesScreen extends StatelessWidget {
                             childAspectRatio: 1,
                             itemCount: Const().fishes.length,
                             customWidget:(context,index)=> InkWell(
-                              onTap: (){},
+                              onTap: (){
+                                Navigator.push(context, MaterialPageRoute(builder: (_)=>ProductDetailScreen()));
+                              },
                               child: DealsItemWidget(
                                 dealModel: Const().fishes[index],
                                                         ),
