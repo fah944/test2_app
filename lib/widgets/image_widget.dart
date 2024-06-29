@@ -1,28 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:ptc_test2_app/core/utils/values_manager.dart';
+import 'package:ptc_test2_app/core/helper/size.dart';
 
-import 'package:flutter/material.dart';
 
 class ImgWidget extends StatelessWidget {
   final String pathOfImg;
   final double? height;
+    final double? width;
 
-  const ImgWidget({super.key, required this.pathOfImg, this.height});
+  const ImgWidget({super.key, required this.pathOfImg, this.height, this.width});
 
   @override
   Widget build(BuildContext context) {
-    double screenHeight = MediaQuery.of(context).size.height;
-    double screenWidth = MediaQuery.of(context).size.width;
-
     return Image(
       image: AssetImage(pathOfImg),
-      height: height ?? screenHeight * 0.3,
-      width: screenWidth * 0.8, // ضبط العرض بناءً على عرض الشاشة
-     // fit: BoxFit.contain, 
+      height: height ?? getHeight(context) * 0.3,
+      width:width ?? getWidth(context) * 0.8,
+      //fit: BoxFit.cover, 
     );
   }
 }
-
 
 
 /*

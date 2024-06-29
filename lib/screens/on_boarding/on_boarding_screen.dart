@@ -1,14 +1,15 @@
 
-
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:ptc_test2_app/screens/home/home_screen.dart';
+import 'package:ptc_test2_app/widgets/icon_widget.dart';
 import '../../core/const/const.dart';
+import '../../core/helper/size.dart';
 import '../../core/utils/color_manager.dart';
 import '../../core/utils/styles_manager.dart';
 import '../../core/utils/values_manager.dart';
 import '../../widgets/box_style_widget.dart';
 import '../../widgets/image_widget.dart';
+import '../home/my_home_screen.dart';
 
 
 class OnBoardingScreen extends StatefulWidget {
@@ -22,9 +23,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   int curIndex = 0;
   @override
   Widget build(BuildContext context) {
-    double size = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: ColorManager.blueColor,
+      backgroundColor: blueColor,
       body:CarouselSlider(
         options: CarouselOptions(
           onPageChanged:(int index,reson)
@@ -33,7 +33,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               curIndex =index;
             });
           } ,
-          height: MediaQuery.of(context).size.height,
+          height: getSize(context).height,
           viewportFraction: 1.0,
           enableInfiniteScroll: false,
         ),
@@ -43,7 +43,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             builder: (BuildContext context,)
              {
               return Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: AppSize.s30),
+                  padding: const EdgeInsets.symmetric(horizontal: AppPadding.p30),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -72,7 +72,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                                  margin:const EdgeInsets.symmetric(horizontal: AppMargin.m4),
                                  width: curIndex == index ? AppSize.s38 :AppSize.s24,
                                  height: AppSize.s4,
-                                 decoration: BoxDecoration(
+                                 decoration:
+                                  BoxDecoration(
                                  color: curIndex == index ? ColorManager.c1 :ColorManager.c4,
                                  borderRadius: BorderRadius.circular(AppSize.s10)
                                        ),
@@ -82,30 +83,27 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                               ),
                               ),
                       const Spacer(),
-                     // Image(image: AssetImage(slide['img']!,),),
-                     Center(
+                      Center(
                        child: ImgWidget(pathOfImg: slide['img']!,
                        ),
                      ),
-                     const Spacer(),
-                     Center(
+                      const Spacer(),
+                      Center(
                        child: Container(
-                        padding:const EdgeInsets.symmetric(horizontal: AppSize.s24,vertical:AppSize.s8 ),
-                        decoration:boxStyleWidget(color: ColorManager.c1,
-                        radius:size / 18//AppSize.s20
+                        padding:const EdgeInsets.symmetric(
+                          horizontal: AppSize.s24,
+                          vertical:AppSize.s8 ),
+                        decoration:boxStyleWidget(
+                          color: ColorManager.c1,
+                          radius:getWidth(context) / 20//AppSize.s20
                         ),
-                        /* BoxDecoration(
-                          color: const Color.fromRGBO(248, 249, 251, 1),
-                          borderRadius: BorderRadius.circular(AppSize.s16)
-                            ),*/
                          child: MaterialButton(
-                         
-                          height: size /10,
-                          minWidth: size * 0.5,
+                          height: getWidth(context)  /10,
+                          minWidth: getWidth(context)  * 0.5,
                           
                           onPressed: ()
                           {
-                            Navigator.push(context, MaterialPageRoute(builder: (_)=>const MyHomeScreen()));
+                            Navigator.pushReplacement(context, MaterialPageRoute(builder: (_)=> MyHomeScreen()));
                           },
                          child:Row(
                           mainAxisSize: MainAxisSize.min,                         
@@ -113,20 +111,17 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                           [
                           
                            Text( slide['tb']!,
-                            //SemiBold_16px
                             style: StyleManager.body1Regular(
                               color: ColorManager.textColor,
                               ),
                               ),
                            const SizedBox(width: AppSize.s50,),
-                           const Icon(Icons.arrow_forward_sharp,
-                            color: ColorManager.textColor,size: AppSize.s20 ,),
-                         
-                          ],
+                           IconWidget(icon:Icons.arrow_forward_sharp,color:textColor),
+                           ],
                           ),),
                        ),
                      ),
-                     const Spacer(),
+                      const Spacer(),
                     ],
                   ),
               );

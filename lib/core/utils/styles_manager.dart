@@ -2,8 +2,20 @@
 import 'package:flutter/material.dart';
 import 'package:ptc_test2_app/core/utils/values_manager.dart';
 
+import 'color_manager.dart';
+
 class StyleManager {
  
+  static TextStyle customHeading({
+        Color? color,
+       double? size ,
+       FontWeight ?fontWeight}) {
+    return TextStyle(
+      color: color?? c1,
+      fontWeight: fontWeight,
+      fontSize: size,
+    );
+  }
 
 //30
 // Heading 01
@@ -91,6 +103,16 @@ class StyleManager {
         Color? color,
        double size = AppSize.s26,
        FontWeight fontWeight = FontWeight.normal,}) {
+    return TextStyle(
+      color: color,
+      fontWeight: fontWeight,
+      fontSize: size,
+    );
+  }
+  static TextStyle h2({
+        Color? color,
+       double size = AppSize.s26,
+       FontWeight? fontWeight}) {
     return TextStyle(
       color: color,
       fontWeight: fontWeight,
@@ -295,7 +317,7 @@ static TextStyle labelRegular({
 
 
 // Button
-static TextStyle button1({
+/*static TextStyle button1({
         Color? color,
        double size = AppSize.s14,
        FontWeight fontWeight = FontWeight.bold}) {
@@ -304,8 +326,21 @@ static TextStyle button1({
       fontWeight: fontWeight,
       fontSize: size,
     );
-  }
+  }*/
 
+
+
+
+static TextStyle textbtn({
+        Color? color,
+       double size = AppSize.s14,
+       FontWeight? fontWeight}) {
+    return TextStyle(
+      color: color,
+      fontWeight: fontWeight,
+      fontSize: size,
+    );
+  }
 static TextStyle button2({
         Color? color,
        double size = AppSize.s12,

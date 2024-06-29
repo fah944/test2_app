@@ -5,7 +5,7 @@ import 'package:ptc_test2_app/core/utils/styles_manager.dart';
 import 'package:ptc_test2_app/core/utils/values_manager.dart';
 import 'package:ptc_test2_app/models/offer_model.dart';
 
-import '../../../widgets/box_style_widget.dart';
+import '../../../../../widgets/box_style_widget.dart';
 import '../../../widgets/image_widget.dart';
 
 
@@ -24,21 +24,24 @@ double size;
       children: [
          Container(
 
-          width: size / 1.6,
-         // margin: EdgeInsets.only(top: (size / 2) / 2),
-          padding: const EdgeInsets.all(AppPadding.p30),
+          width: size / 1.4,//1.6
+          padding: const EdgeInsets.symmetric(
+            horizontal: AppSize.s30,
+            vertical: AppSize.s20
+          ),
           decoration: boxStyleWidget(
-            color:ColorManager.goldenOrangeColor, 
+            color:offerModel.color, 
             radius: AppSize.s12 ,),
           
            child: Row(
-              mainAxisSize: MainAxisSize.min,
-
-              children: [/*
+             mainAxisSize: MainAxisSize.min,
+              children: [
                 ImgWidget( 
                   pathOfImg: offerModel.img,
-                    height: size * 0.2,),
-                 const SizedBox(width: AppSize.s10,),
+                  height:size/5,
+                  width: size/7,
+                    ),
+                 const Spacer(),
                  Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.min,
@@ -58,7 +61,7 @@ double size;
                         ),),
                   ],
                  ),
-             */ ],
+              ],
             ),
          ),
         
